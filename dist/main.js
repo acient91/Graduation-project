@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./src/modules/modal.js\");\n/* harmony import */ var _modules_scrollMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scrollMenu */ \"./src/modules/scrollMenu.js\");\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_scrollMenu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n//# sourceURL=webpack://startwebpack/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./src/modules/modal.js\");\n/* harmony import */ var _modules_scrollMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scrollMenu */ \"./src/modules/scrollMenu.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ \"./src/modules/slider.js\");\n\r\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_scrollMenu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\n//# sourceURL=webpack://startwebpack/./src/index.js?");
 
 /***/ }),
 
@@ -36,7 +36,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst scrollMenu = () => {\r\n  const menuList = document.querySelectorAll('.menu>li>a');\r\n\r\n  menuList.forEach((item) => {\r\n    item.addEventListener('click', (e) => {\r\n      e.preventDefault();\r\n      const id = item.getAttribute('href').slice(1);\r\n      document.getElementById(id).scrollIntoView({\r\n        behavior: 'smooth',\r\n        block: 'start',\r\n      });\r\n    })\r\n  });\r\n\r\n  // menuList.addEventListener('click', (e) => {\r\n  //   e.preventDefault();\r\n  //   console.log(e.target);\r\n  // })\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrollMenu);\n\n//# sourceURL=webpack://startwebpack/./src/modules/scrollMenu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst scrollMenu = () => {\r\n  const menuList = document.querySelectorAll('.menu>li>a');\r\n\r\n  menuList.forEach((item) => {\r\n    item.addEventListener('click', (e) => {\r\n      e.preventDefault();\r\n      const id = item.getAttribute('href').slice(1);\r\n      document.getElementById(id).scrollIntoView({\r\n        behavior: 'smooth',\r\n        block: 'start',\r\n      });\r\n    })\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrollMenu);\n\n//# sourceURL=webpack://startwebpack/./src/modules/scrollMenu.js?");
+
+/***/ }),
+
+/***/ "./src/modules/slider.js":
+/*!*******************************!*\
+  !*** ./src/modules/slider.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst slider = () => {\r\n  const itemSlider = document.querySelectorAll('.item');\r\n  let current = 0;\r\n\r\n  setInterval(() => {\r\n    itemSlider[current].classList.remove('item-active');\r\n    current++\r\n\r\n    if (current >= itemSlider.length) {\r\n      current = 0;\r\n    }\r\n    itemSlider[current].classList.add('item-active');\r\n  }, 3000);\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);\n\n//# sourceURL=webpack://startwebpack/./src/modules/slider.js?");
 
 /***/ })
 
