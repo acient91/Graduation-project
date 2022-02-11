@@ -3,6 +3,8 @@ const modal = () => {
   const callbackModal = document.getElementById('callback');
   const modalClose = document.querySelector('[alt="modal-close"]');
   const body = document.querySelector('body');
+  const serviceSlide = document.querySelectorAll('.service-slide');
+  const buttonServices = document.querySelector('.button-services');
 
   let count = 0;
   let idInterval;
@@ -32,8 +34,20 @@ const modal = () => {
     } else if (e.target == modalClose) {
       callbackModal.style.display = 'none';
       modalOverlay.style.display = 'none';
+    } else if (e.target.classList.contains('button-services')) {
+      callbackModal.style.display = 'flex';
+      modalOverlay.style.display = 'block';
+      animate();
     }
   });
+
+  serviceSlide.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      callbackModal.style.display = 'flex';
+      modalOverlay.style.display = 'block';
+      animate();
+    })
+  })
 };
 
 export default modal

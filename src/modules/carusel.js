@@ -1,6 +1,12 @@
-import Swiper from 'swiper';
+import Swiper, {
+  Autoplay,
+  Navigation
+} from 'swiper';
+
+Swiper.use([Autoplay, Navigation])
 
 const carusel = () => {
+
   const swiper = new Swiper('.swiper', {
     slidesPerView: 3,
     spaceBetween: 30,
