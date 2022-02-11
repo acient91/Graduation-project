@@ -1264,10 +1264,12 @@ video#video_background {
 
 .arrow-left {
   transform: rotate(180deg);
+  position: relative;
   margin-right: 20px;
 }
 
 .arrow-right {
+  position: relative;
   margin-left: 20px;
 }
 
