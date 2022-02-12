@@ -2,8 +2,12 @@ import modal from './modules/modal';
 import scrollMenu from './modules/scrollMenu';
 import slider from './modules/slider';
 import carusel from './modules/carusel';
+import accordion from './modules/accordion';
+import scroll from './modules/scroll';
 
 modal();
 scrollMenu();
 slider();
 carusel();
+accordion();
+scroll();

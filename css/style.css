@@ -1168,7 +1168,7 @@ video#video_background {
   transition: all 200ms ease-out;
 }
 
-.accordeon .element.active .title {
+.accordeon .element.accordeon-item--active .title {
   background: #e9bb26;
   color: #fff !important;
 }
@@ -1192,7 +1192,7 @@ video#video_background {
   transition: all 200ms ease-out;
 }
 
-.accordeon .element.active .title:before {
+.accordeon .element.accordeon-item--active .title:before {
   background: url(../images/minus.png) 50% 50% no-repeat #333;
 }
 
@@ -1434,6 +1434,7 @@ video#video_background {
 
 .up {
   position: fixed;
+  display: none;
   bottom: 50px;
   right: 50px;
   width: 70px;
