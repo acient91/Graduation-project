@@ -1275,7 +1275,7 @@ video#video_background {
   margin-left: 20px;
 }
 
-.swiper-button-prev {
+/* .swiper-button-prev {
   background-image: url('/images/right-arrow_1.svg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -1287,7 +1287,7 @@ video#video_background {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
+} */
 
 .swiper-button-prev::after {
   display: none;

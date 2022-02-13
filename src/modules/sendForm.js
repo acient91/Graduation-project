@@ -48,9 +48,8 @@ const sendForm = () => {
       sendData(formBody)
         .then(data => {
           statusBlock.textContent = successText;
-          formElements.forEach(input => {
-            input.value = '';
-          })
+          userName.value = '';
+          userPhone.value = '';
           setTimeout(() => statusBlock.remove(), 3000);
         })
         .catch(error => {
@@ -63,7 +62,7 @@ const sendForm = () => {
 
   formBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    if ((userName.value == '' || userName.value == '')) {
+    if ((userName.value == '' || userPhone.value == '')) {
       alert('Заполните данные');
     } else {
       submitForm();
