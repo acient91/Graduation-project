@@ -5,11 +5,11 @@ const sendForm = () => {
   const loadText = 'Загрузка...';
   const errorText = 'Ошибка...';
   const successText = 'Спасибо, ждите звонка!';
+  const userName = form.querySelector('[name="fio"]');
+  const userPhone = form.querySelector('[name="tel"]');
 
   const validate = () => {
     let success = true;
-    const userName = form.querySelector('[name="fio"]');
-    const userPhone = form.querySelector('[name="tel"]');
 
     userName.addEventListener('input', (e) => {
       e.target.value = e.target.value.replace(/[^а-яА-Я]+/g, '');
@@ -57,14 +57,17 @@ const sendForm = () => {
           statusBlock.textContent = errorText;
         })
     } else {
-      alert('Данные не валидны!')
+      alert('Заполните данные')
     }
   };
 
   formBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    validate();
-    submitForm();
+    if ((userName.value == '' || userName.value == '')) {
+      alert('Заполните данные');
+    } else {
+      submitForm();
+    }
   });
   validate();
 };
