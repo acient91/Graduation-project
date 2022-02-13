@@ -335,6 +335,7 @@ a.absolute {
 
 .modal-callback {
   display: none;
+  flex-direction: column;
   position: fixed;
   top: 20%;
   left: 50%;

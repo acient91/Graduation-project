@@ -12,13 +12,11 @@ const sendForm = () => {
     const userPhone = form.querySelector('[name="tel"]');
 
     userName.addEventListener('input', (e) => {
-      e.target.value = e.target.value.replace(/[^а-яА-Я]/g, '');
-      console.log(e.target.value);
+      e.target.value = e.target.value.replace(/[^а-яА-Я]+/g, '');
     });
 
     userPhone.addEventListener('input', (e) => {
       e.target.value = e.target.value.replace(/[^\d\+]/g, '');
-      console.log(e.target.value);
     });
     return success;
   };
@@ -68,6 +66,7 @@ const sendForm = () => {
     validate();
     submitForm();
   });
+  validate();
 };
 
 export default sendForm;
