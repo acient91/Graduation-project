@@ -4,7 +4,6 @@ const modal = () => {
   const modalClose = document.querySelector('[alt="modal-close"]');
   const body = document.querySelector('body');
   const serviceSlide = document.querySelectorAll('.service-slide');
-  const buttonServices = document.querySelector('.button-services');
 
   let count = 0;
   let idInterval;
