@@ -8,15 +8,25 @@ const sendForm = () => {
   const userName = form.querySelector('[name="fio"]');
   const userPhone = form.querySelector('[name="tel"]');
 
+
   const validate = () => {
     let success = true;
 
     userName.addEventListener('input', (e) => {
       e.target.value = e.target.value.replace(/[^а-яА-Я]+/g, '');
+      userName.classList.remove('error');
+      if (userName.value.length < 2) {
+        userName.classList.add('error');
+      };
     });
 
     userPhone.addEventListener('input', (e) => {
       e.target.value = e.target.value.replace(/[^\d\+]/g, '');
+      userPhone.classList.remove('error');
+      if (userPhone.value.length < 9 || userPhone.value.length > 16) {
+        userPhone.classList.add('error');
+      };
+      console.log(userPhone.value.length);
     });
     return success;
   };
@@ -62,11 +72,16 @@ const sendForm = () => {
 
   formBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    if ((userName.value == '' || userPhone.value == '')) {
-      alert('Заполните данные');
+
+    if (userName.value.length < 2) {
+      userName.classList.add('error');
+    } else if (userPhone.value.length < 9 || userPhone.value.length > 16) {
+      userPhone.classList.add('error');
     } else {
+      userName.classList.remove('error');
+      userPhone.classList.remove('error');
       submitForm();
-    }
+    };
   });
   validate();
 };
